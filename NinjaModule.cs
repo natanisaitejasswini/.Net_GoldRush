@@ -18,7 +18,6 @@ namespace NinjaNancy
                 ViewBag.display = Session["display"];
                 return View["Ninja"];
             });
-            //bkjjkvf
             Post("/process_money", args =>
             {
                 DateTime date = DateTime.Now;
