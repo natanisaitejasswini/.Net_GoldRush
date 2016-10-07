@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <link rel="stylesheet" href="Content/style.css"/>
+         <meta charset="UTF-8">
+         <title>Great Number Game</title>
+    </head>
+    <body>
+        <h1>Welcome to Great Number Game</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p class="center">Take a guess!</p>
+
+        @If.Context.ViewBag.show
+            <div class="red">
+              @ViewBag.display
+            </div>
+        <form action="/formsubmitted" method="post">
+            <input type="number" name="guess"/>
+            <input type="submit" name="submit">
+        </form>
+        @EndIf
+
+         @IfNot.Context.ViewBag.show
+            <div class="green">
+              @ViewBag.display
+            </div>
+            <form action="/">
+                <input type="submit" value="Play Again!">
+            </form>
+         @EndIf
+
+    </body>
+</html>
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <link rel="stylesheet" href="Content/style.css"/>
+         <meta charset="UTF-8">
+         <title>Hello</title>
+    </head>
+    <body>
+        <h1>Hello Nancy</h1>
+        <p>Vie data is @ViewBag.data</p>
+
+        @If.Context.ViewBag.show
+            <p>I only apprear if ViewBag.show is true!</p>
+        @EndIf
+
+        @Each
+        @Current
+        @EndEach
+
+        <!-- Form starting -->
+        <form action="/formsubmitted" method="post">
+            UserName:<input type="text" name="Username"/>
+            <input type="submit" name="submit">
+        </form>
+
+        <p>Username entered is: @ViewBag.list</p>
+        
+    </body>
+</html>
+
+
